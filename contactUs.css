@@ -2,6 +2,7 @@
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+   
     
 }
 
@@ -11,18 +12,17 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 20px;
+    padding: 90px;
     color: #333;
     opacity: 0;
     animation: fadeIn 0.8s ease-in forwards; /* Fade-in effect */
-    
 }
 
 .container {
     width: 100%;
     max-width: 800px;
-    background-color: #fff;
-    padding: 30px;
+    background-color: linear-gradient(135deg, #36d1dc, #5b86e5);
+   padding: 20px; /* Add padding here instead, if needed */
     border-radius: 10px;
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
 }
@@ -82,6 +82,8 @@ label {
 
 input[type="text"],
 input[type="email"],
+
+
 textarea {
     width: 100%;
     padding: 10px;
@@ -90,13 +92,26 @@ textarea {
     border-radius: 8px;
     font-size: 14px;
     transition: border 0.3s;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Set transition duration and easing */
 }
 
 input[type="text"]:focus,
 input[type="email"]:focus,
+input[ type="message"]:focus
 textarea:focus {
     border-color: #007bff;
     outline: none;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Set transition duration and easing */
+
+}
+
+input[type="email"]:hover,
+input[type="text"]:hover,
+input[type="message"]:hover
+ {
+    transform: scale(1.05);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+    border-color: #76dbdb;
 }
 
 
@@ -204,7 +219,7 @@ button {
     padding: 12px;
     font-size: 16px;
     color: #fff;
-    background-color: #007bff;
+    background-color: #79c7e5;
     border: none;
     border-radius: 8px;
     cursor: pointer;
@@ -227,4 +242,32 @@ button:active {
     to {
         opacity: 1;
     }
+}
+
+
+.mailto {
+    position: relative;
+    color: inherit;
+    text-decoration: none; /* Remove default underline */
+}
+
+.mailto:hover{
+color: #76dbdb;
+}
+
+.mailto::after {
+    content: ""; /* Creates an underline */
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #007bff; /* Set your desired color */
+    transition: width 0.4s ease, left 0.4s ease; /* Smooth animation */
+}
+
+.mailto:hover::after {
+    width: 100%; /* Expands the underline to full width */
+    left: 0; /* Starts the underline from the center */
+    
 }
